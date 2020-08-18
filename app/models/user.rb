@@ -32,6 +32,15 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+
+    def import_file file
+      spreadsheet = Roo::Spreadsheet.open file
+      header = spreadsheet.row 1
+      (2..spreadsheet.last_row).each do |i|
+        row = [header, spreadsheet.row(i)].transpose.to_h
+        create! row unless User.where(email: row["email"]).exists?
+      end
+    end
   end
 
   def remember
