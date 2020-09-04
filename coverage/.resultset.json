@@ -1114,6 +1114,11 @@
       "/home/hainn/hainn/training-sun-asterisk/Hainn/naitei-ruby-2020-airport-flight-management/spec/requests/landing_request_spec.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          null,
+          1,
           null,
           1,
           null,
@@ -1144,6 +1149,17 @@
           null,
           1,
           1,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          1,
           0,
           0,
           null,
@@ -1160,8 +1176,17 @@
           1,
           null
         ]
+      },
+      "/home/huy-hoang/naitei-ruby-2020-airport-flight-management/spec/requests/pilots_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1599200410
+    "timestamp": 1599211266
   }
 }
