@@ -1,6 +1,11 @@
 <div id="request-screen">
   <div id="accordion">
     <div class="card">
+      <div class="card-body" id="form-request">
+        <h2 class="card-title-custom text-center w-100">
+          <%= t ".head" %>
+        </h2>
+      </div>
       <div class="search" id="search">
         <%= search_form_for @q, class: "form-inline" do |f| %>
           <div class="form-group" id="content-search">
@@ -15,11 +20,6 @@
             <% end %>
           </div>
         <% end %>
-      </div>
-      <div class="card-body" id="form-request">
-        <h2 class="card-title-custom text-center w-100">
-          <%= t ".head" %>
-        </h2>
       </div>
       <div class="request-table">
         <table class="table table-striped table-hover table-bordered">
