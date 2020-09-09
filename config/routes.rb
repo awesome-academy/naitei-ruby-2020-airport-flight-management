@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
     devise_for :users
 
-    resources :users, only: :show
+    resources :users, only: %i(show edit update)
+    resources :pilots, only: :index
+    resources :air_officers, only: :index
   end
+
+  mount Base => '/'
 end
