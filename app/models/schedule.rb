@@ -17,6 +17,10 @@ class Schedule < ApplicationRecord
   scope :all_schedules_now, ->(time){where("schedules.time >= ?", time.to_datetime)}
 
   class << self
+    def list_all_schedule_now
+      all_schedules_now(Time.zone.now)
+    end
+
     def checkrunway? params
       schedules = Schedule.time_schedules params[:time].to_datetime
       check_runwayid_form? schedules, Runway.all.size, params[:runway_id].to_i
