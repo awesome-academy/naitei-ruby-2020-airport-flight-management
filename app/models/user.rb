@@ -12,8 +12,7 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   scope :all_pilots, ->(type_account){where("users.type_account = ?", type_account)}
-
-  private
+  scope :all_air_officers, ->(type_account){where("users.type_account = ?", type_account)}
 
   def downcase_email
     email.downcase!

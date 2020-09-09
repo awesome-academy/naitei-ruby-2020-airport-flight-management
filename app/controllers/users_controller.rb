@@ -16,7 +16,11 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     if @user.update user_params
       flash[:success] = t ".updated"
-      redirect_to pilots_path
+      if @user.type_account == Settings.user.default_pilot
+        redirect_to pilots_path
+      else
+        redirect_to air_officers_path
+      end
     else
       flash[:success] = t ".update_fail"
       render :edit
