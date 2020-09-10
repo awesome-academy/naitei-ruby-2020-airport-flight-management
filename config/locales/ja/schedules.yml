@@ -10,6 +10,8 @@ ja:
       btn_edit: 編集
       search: 検索
       delete: 削除
+      button_text: アップロードする
+      text_head: データをインポートする
     edit:
       edit: フライトスケジュールを編集
       time: 飛行時間

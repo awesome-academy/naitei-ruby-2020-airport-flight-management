@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
   def self.default_url_options
     {locale: I18n.locale}
   end
+
+  private
+
+  def check_admin
+    redirect_to root_url unless current_user.admin?
+  end
 end

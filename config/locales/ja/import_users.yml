@@ -1,0 +1,4 @@
+ja:
+  import_users:
+    create:
+      success: "更新成功"

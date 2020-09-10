@@ -6,5 +6,5 @@ jQuery(function ($){
     $('#q_time_eq').val('')
     $('#q_from_gteq').val('')
     $('#q_to_lteq').val('')
-  })  
+  })
 })

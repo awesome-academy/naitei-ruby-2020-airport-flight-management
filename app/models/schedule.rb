@@ -52,5 +52,30 @@ class Schedule < ApplicationRecord
       end
       @runway_able
     end
+
+    def check_data_validate? data
+      schedules = Schedule.where("time = ? AND runway_id = ? ", data["time"].to_datetime, data["runway_id"])
+      return true if Runway.where(id: data["runway_id"]).exists? &&
+                     User.where(id: data["user_id"]).exists? &&
+                     Plane.where(id: data["plane_id"]).exists? &&
+                     schedules.empty?
+
+      false
+    end
+
+    def import_file file
+      spreadsheet = Roo::Spreadsheet.open file
+      row_errors = Array.new
+      header = spreadsheet.row Settings.import_file.default_header
+      (2..spreadsheet.last_row).each do |i|
+        row = [header, spreadsheet.row(i)].transpose.to_h
+        if check_data_validate? row
+          create! row
+        else
+          row_errors << i
+        end
+      end
+      row_errors
+    end
   end
 end

@@ -10,6 +10,8 @@ vi:
       btn_edit: Sửa
       search: Tìm kiếm
       delete: Xoá
+      button_text: Tải dữ liệu lịch bay lên
+      button_submit: Tải lên
     edit:
       edit: Sửa lịch bay
       time: Thời gian

@@ -1,0 +1,7 @@
+ja:
+  import_schedules:
+    create:
+      success: "更新成功"
+      head: "エラーのある行のリスト"
+      stt: "番号順"
+      row: "Excelファイルの番号"

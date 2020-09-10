@@ -1,0 +1,7 @@
+vi:
+  import_schedules:
+    create:
+      success: "Đã cập nhật thành công"
+      head: "Danh sách các dòng bị lỗi"
+      stt: "STT"
+      row: "Số dòng file excel"
