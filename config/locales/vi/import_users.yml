@@ -1,0 +1,4 @@
+vi:
+  import_users:
+    create:
+      success: "Đã cập nhật thành công"

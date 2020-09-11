@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     devise_for :users
 
     resources :users, only: %i(show edit update)
+    resources :import_users, only: :create
+    resources :import_schedules, only: :create
     resources :pilots, only: :index
     resources :air_officers, only: :index
   end

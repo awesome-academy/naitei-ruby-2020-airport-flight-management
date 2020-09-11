@@ -112,3 +112,26 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.import_form {
+  .body_form{
+    width: 100%;
+    float: right;
+    #mybutton {
+      visibility:hidden;
+    }
+
+    .row.btn-submit{
+      width: auto;
+      float: right;
+      padding-right: 45px;
+    }
+
+    #button-submit {
+      display: none;
+    }
+    #button-file {
+      float: right;
+    }
+  }
+}

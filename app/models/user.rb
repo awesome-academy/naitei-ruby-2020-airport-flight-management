@@ -14,6 +14,29 @@ class User < ApplicationRecord
   scope :all_pilots, ->(type_account){where("users.type_account = ?", type_account)}
   scope :all_air_officers, ->(type_account){where("users.type_account = ?", type_account)}
 
+  class << self
+    def check_data_validate? data
+      return true unless User.where(email: data["email"]).exists?
+
+      false
+    end
+
+    def import_file file
+      spreadsheet = Roo::Spreadsheet.open file
+      row_errors = Array.new
+      header = spreadsheet.row Settings.import_file.default_header
+      (2..spreadsheet.last_row).each do |i|
+        row = [header, spreadsheet.row(i)].transpose.to_h
+        if check_data_validate? row
+          create! row
+        else
+          row_errors << i
+        end
+      end
+      row_errors
+    end
+  end
+
   def downcase_email
     email.downcase!
   end
